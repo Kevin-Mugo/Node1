@@ -1,0 +1,11 @@
+//Modules
+const names = require('./names3')
+const sayHi = require('./utils4')
+const data = require('./alt')
+require('./mind')
+
+ console.log(data);
+
+sayHi('Kevin');
+sayHi(names.mugo);
+sayHi(names.irungu);
