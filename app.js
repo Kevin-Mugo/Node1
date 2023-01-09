@@ -1,18 +1,7 @@
-const os = require('os')
+const _ = require('lodash') 
 
-//info about current user
-const user = os.userInfo();
-//console.log(user);
+const items = [1,[2,[3,[4]]]]
 
-//info about system uptime
-const uptime = os.uptime();
-console.log(`The system uptime is ${uptime} seconds`)
+const newItems = _.flattenDeep(items)
 
-const currentOs = {
-    name:os.type(),
-    release:os.release(),
-    totalMem:os.totalmem(),
-    freeMem:os.freemem()
-}
-
-console.log(currentOs);
+console.log(newItems);
