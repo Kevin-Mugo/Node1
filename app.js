@@ -1,10 +1,14 @@
-const http = require('http');
+const EventEmitter = require('events')
 
-const server = http.createServer((req,res) =>{
-    console.log('request event');
-    res.end("Hello world");
-});
+const customEmitter = new EventEmitter();
 
-server.listen(5000,() => {
-    console.log("Server listening to port 5000....");
-} )
+customEmitter.on('response' , (name ,id ) => {
+    console.log(`Data has been received for user ${name} with id:${id}`);
+})
+
+customEmitter.on('response' , () => {
+    console.log("Data has been read out");
+})
+
+
+customEmitter.emit('response' ,'John' , '001');

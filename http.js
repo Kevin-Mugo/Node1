@@ -6,6 +6,8 @@ const server = http.createServer((req,res) =>{
         res.end("Welcome to Anzy furnitures store");
     }
     if(req.url === '/about'){
+        
+        
         res.end("Here is the info about us")
     }
     res.end(`
